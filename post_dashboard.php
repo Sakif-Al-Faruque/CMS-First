@@ -1,7 +1,6 @@
 <?php 
     require "header.php";
     require "include/db_operation.php";
-
 ?>
 
     <!-- header starts -->

@@ -1,5 +1,5 @@
 <?php 
-    require "db.php";
+    require_once "db.php";
 
     function GetAllData($table){
         $conn = MakeConnection();

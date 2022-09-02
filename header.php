@@ -29,7 +29,7 @@
                 <a class="nav-link" href="category.php">Categories</a>
                 <a class="nav-link" href="#">Manage Admins</a>
                 <a class="nav-link" href="#">Comments</a>
-                <a class="nav-link" href="#">Live Blog</a>
+                <a class="nav-link" href="blog.php">Live Blog</a>
             </div>
             <a href="#" class="nav-link text-right text-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </div>
