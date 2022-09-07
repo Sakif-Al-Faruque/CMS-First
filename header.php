@@ -21,17 +21,21 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav m-auto">
-                <!-- <a class="nav-link active" href="/CMS-4.2.1/">Home <span class="sr-only">(current)</span></a> -->
-                <a class="nav-link text-success" href="#"><i class="fa-solid fa-user"></i> My Profile</a>
-                <a class="nav-link" href="#">Dashboard</a>
-                <a class="nav-link" href="post.php">Posts</a>
-                <a class="nav-link" href="category.php">Categories</a>
-                <a class="nav-link" href="#">Manage Admins</a>
-                <a class="nav-link" href="#">Comments</a>
-                <a class="nav-link" href="blog.php">Live Blog</a>
-            </div>
-            <a href="#" class="nav-link text-right text-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                <?php 
+                    if(isset($_SESSION["username"])){
+                ?>
+                <div class="navbar-nav m-auto">
+                    <!-- <a class="nav-link active" href="/CMS-4.2.1/">Home <span class="sr-only">(current)</span></a> -->
+                    <a class="nav-link text-success" href="#"><i class="fa-solid fa-user"></i> My Profile</a>
+                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    <a class="nav-link" href="post_dashboard.php">Posts</a>
+                    <a class="nav-link" href="category.php">Categories</a>
+                    <a class="nav-link" href="add_admin.php">Manage Admins</a>
+                    <a class="nav-link" href="comment_show.php">Comments</a>
+                    <a class="nav-link" href="blog.php">Live Blog</a>
+                </div>
+                <a href="logout.php" class="nav-link text-right text-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                <?php } ?>
             </div>
         </div>
     </nav>

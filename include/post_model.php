@@ -39,10 +39,10 @@ function RetrievePostById($post_id){
       
         // set the resulting array to associative
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        return $stmt->fetch();
+        return $stmt->fetch(); //return 1D array
         
       } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo "Error: " . $e->getMessage(); 
       }
     $conn = null;
 }
@@ -83,4 +83,38 @@ function DeletePost($post_id){
 //
 // var_dump(RetrievePostById('1'));
 
+//this function should be noticed
+function GetSpecificRowsOfBlog($data){
+  $conn = MakeConnection();
+  $query = "SELECT * FROM `post` WHERE `post_title` LIKE :data OR `category_title` LIKE :data OR `author` LIKE :data;";
+  $stmt = $conn->prepare($query);
+  //$stmt->bindParam(':data', '%'.$data.'%');
+  $stmt->bindValue(':data', '%'.$data.'%');
+  $stmt->execute();
+
+  $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  $result = $stmt->fetchAll();
+  
+  return $result;
+}
+
+function RetrieveLimitedPost($from, $to){
+  try {
+      $conn = MakeConnection();
+      $stmt = $conn->prepare("SELECT * FROM `post` ORDER BY `id` LIMIT ".$from.", ".$to.";");
+      /* $stmt->bindValue(':from', $from);
+      $stmt->bindValue(':to', $to); */
+      $stmt->execute();
+    
+      // set the resulting array to associative
+      $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      return $stmt->fetchAll();
+      
+    } catch(PDOException $e) {
+      echo "Error: " . $e->getMessage(); 
+    }
+  $conn = null;
+}
+// var_dump(RetrieveLimitedPost(1, 4));
+// var_dump(RetrievePostById("1"));
 ?>

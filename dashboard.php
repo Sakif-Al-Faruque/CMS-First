@@ -18,28 +18,54 @@
         <div class="container my-2">
             <div class="row">
                 <div class="col-md-12 bg-dark py-2">
-                    <h1 class="text-light"><i class="fa-solid fa-bars-progress text-primary"></i></i> Manage Post</h1>
+                    <h1 class="text-light"><i class="fa-solid fa-gear text-primary"></i> Dashboard</h1>
                 </div>
             </div>
         </div>
     </header>
     <!-- header ends -->
 
-    <section class="manage-post">
+    <!-- <section class="manage-post">
         <div class="container">
             <div class="row py-3 mb-3 bg-dark">
-                <div class="col-md-3"><a class="btn btn-primary btn-block" href="post.php"><i class="fa-regular fa-file"></i></i> Add New Post</a></div>
-                <div class="col-md-3"><a class="btn btn-warning btn-block" href="add_categories.php"><i class="fas fa-file-alt"></i></i> Add New Category</a></div>
-                <div class="col-md-3"><a class="btn btn-info btn-block" href="add_admin.php"><i class="fa-solid fa-user-plus"></i> Add New Admin</a></div>
-                <div class="col-md-3"><a class="btn btn-success btn-block" href="comment_show.php"><i class="far fa-comment"></i> Approve Comments</a></div>
+                <div class="col-md-3"><a class="btn btn-primary btn-block" href="#"><i class="fa-regular fa-file"></i></i> Add New Post</a></div>
+                <div class="col-md-3"><a class="btn btn-warning btn-block" href="#"><i class="fas fa-file-alt"></i></i> Add New Category</a></div>
+                <div class="col-md-3"><a class="btn btn-info btn-block" href="#"><i class="fa-solid fa-user-plus"></i> Add New Admin</a></div>
+                <div class="col-md-3"><a class="btn btn-success btn-block" href="#"><i class="far fa-comment"></i> Approve Comments</a></div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="show-post">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 18rem;">
+                        <div class="card-header">Post(s)</div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-file"></i> <?php echo RowCountFromTable("post"); ?></h5>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 18rem;">
+                        <div class="card-header">Categorie(s)</div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-folder"></i> <?php echo RowCountFromTable("category"); ?></h5>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 18rem;">
+                        <div class="card-header">Admin(s)</div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-users"></i> <?php echo RowCountFromTable("admin"); ?></h5>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 18rem;">
+                        <div class="card-header">Comment(s)</div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-comments"></i> <?php echo RowCountFromTable("comment"); ?></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10">
                     <table class="table text-center">
                         <thead class="thead-dark">
                             <tr>

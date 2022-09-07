@@ -15,6 +15,21 @@
         return $data;
     }
 
+    function RowCountFromTable($table){
+        $conn = MakeConnection();
+        $query = "SELECT COUNT(*) FROM ".$table;
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        //$stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $data = $stmt->fetch();
+        $rows = array_shift($data);
+
+        // $conn->closs();
+
+        return $rows;
+    }
+
     //var_dump(GetAllData("category"));
     //var_dump(GetAllData("post"));
 
@@ -40,4 +55,9 @@
         echo "<br>";
     } */
 
+    
+
+    //var_dump(GetSpecificRowsOfBlog("atomic"));
+
 ?>
+

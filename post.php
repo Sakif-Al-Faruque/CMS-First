@@ -6,6 +6,14 @@
 
 ?>
 
+<?php 
+    if(!isset($_SESSION["username"])){
+        $_SESSION["TrackUrl"] = $_SERVER["PHP_SELF"];      
+        RedirectTo("login.php");
+    }
+
+?>
+
     <!-- header starts -->
     <header>
         <div class="container my-2">
@@ -22,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <?php ShowMessage("danger"); ?>
+                    <?php ShowMessage(); ?>
                     <div class="card bg-dark">
                         <div class="card-header">
                             <h3 class="text-light text-center">Add Posts</h3>
